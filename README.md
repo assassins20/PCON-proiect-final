@@ -13,7 +13,7 @@ Odata slice-urile pentru cele doua piese fiind selectate, putem astfel reda fiec
 
 Pentru vizualizarea melodiilor in timp, am folosit "waveform~" si "loadmess" pentru a incarca informatia audio in waveform cand o melodie este selectata.
 
-Apoi, pentru controlul nivelului audio si al slice-ului selectat, folosim obiectul "udpreceive", pentru a primi valorile necesare, pe care le vom incarca in obiectele de gain "live.gain" si obiectul de selectare al slice-ului care nu e nimeni altcineva decat obiectul de trigger mentionat mai devreme.
+Apoi, pentru controlul nivelului audio si al slice-ului selectat, folosim obiectul "udpreceive", pentru a primi valorile necesare controlului de pe telefon, pe care le vom incarca in obiectele de gain "live.gain" si obiectul de selectare al slice-ului care nu e nimeni altcineva decat obiectul de trigger mentionat mai devreme.
 
 Astfel, rezulta un patch cu care putem sa ne jucam cu redarea in segmente a doua piese si modificarea nivelului acestora in timp real, rezultand un efect similar unui fader.
 
