@@ -1,11 +1,11 @@
 # (Titlu)
-(Scurtă descriere)
+LoopFader
 
 ## (Instalare)
-...
+Se utilizeaza doar MAX si o aplicatie OSC de pe telefon https://play.google.com/store/apps/details?id=com.ffsmultimedia.osccontroller
 
 ## (Utilizare)
-...
+Cu ajutorul mesajelor replace putem selecta orice fisiere audio pe care le avem pe dispozitivul nostru. Cu cele mesaje replace vom incarca 2 piese. Piesele vor fi incarcate cu ajutorul obiectului "buffer" ce incarca piesa intr-un buffer. Apoi cu ajutorul obiectului "info" vom afisa timpul total al piesei in milisecunde. Acesta valoare o vom imparti in cate slice-uri dorim. Eu am folosit 32 de slice-uri, dar valoarea se poate seta arbitrar. Astfel vom avea timpul in milisecunde pe care il va avea fiecare slice. Astfel, pentru primul slice incepem de la 0, pentru al doilea slice incepem de la 0 + duratia slice-ului, pentru al treilea slice incepem de la 0 + durata a doua slice-uri, si asa mai departe. Acest lucru este realizat cu ajutorul obiectului trigger, in care de fiecare data cand incarcam o valoare a slide ului de la 0 la 31, incarca valoarea respectiva si apoi da si un bang, pentru calcularea instanta a noului slice selectat. Calculul intervalului este {(durata unui slice * numarul slice-ului), ((durata unui slice * numarul slice-ului) + durata unui slice)}
 
 ## (Istoric)
 
