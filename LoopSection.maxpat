@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 107.0, 1715.0, 847.0 ],
+		"rect" : [ 114.0, 121.0, 1715.0, 847.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -327,7 +327,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1081.0, 395.5, 50.0, 22.0 ]
+					"patching_rect" : [ 1081.0, 395.5, 99.0, 22.0 ]
 				}
 
 			}
@@ -412,8 +412,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 1018.0, 129.0, 141.0, 22.0 ],
-					"text" : "buffer~ exemplu1 4000 2"
+					"patching_rect" : [ 1018.0, 129.0, 148.0, 22.0 ],
+					"text" : "buffer~ exemplu1 10000 2"
 				}
 
 			}
@@ -558,7 +558,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 248.0, 388.5, 50.0, 22.0 ]
+					"patching_rect" : [ 248.0, 388.5, 94.0, 22.0 ]
 				}
 
 			}
@@ -643,8 +643,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 185.0, 129.0, 135.0, 22.0 ],
-					"text" : "buffer~ exemplu 4000 2"
+					"patching_rect" : [ 185.0, 129.0, 141.0, 22.0 ],
+					"text" : "buffer~ exemplu 10000 2"
 				}
 
 			}
