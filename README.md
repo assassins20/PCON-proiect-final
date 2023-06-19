@@ -5,7 +5,17 @@ LoopFader
 Se utilizeaza doar MAX si o aplicatie OSC de pe telefon https://play.google.com/store/apps/details?id=com.ffsmultimedia.osccontroller
 
 ## (Utilizare)
-Cu ajutorul mesajelor replace putem selecta orice fisiere audio pe care le avem pe dispozitivul nostru. Cu cele mesaje replace vom incarca 2 piese. Piesele vor fi incarcate cu ajutorul obiectului "buffer" ce incarca piesa intr-un buffer. Apoi cu ajutorul obiectului "info" vom afisa timpul total al piesei in milisecunde. Acesta valoare o vom imparti in cate slice-uri dorim. Eu am folosit 32 de slice-uri, dar valoarea se poate seta arbitrar. Astfel vom avea timpul in milisecunde pe care il va avea fiecare slice. Astfel, pentru primul slice incepem de la 0, pentru al doilea slice incepem de la 0 + duratia slice-ului, pentru al treilea slice incepem de la 0 + durata a doua slice-uri, si asa mai departe. Acest lucru este realizat cu ajutorul obiectului trigger, in care de fiecare data cand incarcam o valoare a slide ului de la 0 la 31, incarca valoarea respectiva si apoi da si un bang, pentru calcularea instanta a noului slice selectat. Calculul intervalului este {(durata unui slice * numarul slice-ului), ((durata unui slice * numarul slice-ului) + durata unui slice)}
+Cu acest patch se pot selecta segmente de redare a doua piese in loop, gain-ul si segmentul de redare al fiecarei piese avand posibilitatea de a fi controlate de pe telefon cu ajutorul OSC, cele doua segmente avand posibilitatea de a fi redate simultan., realizandu-se efectul de fader.
+
+Cu ajutorul mesajelor replace putem selecta orice fisiere audio pe care le avem pe dispozitivul nostru. Cu cele mesaje replace vom incarca 2 piese. Piesele vor fi incarcate cu ajutorul obiectului "buffer" ce incarca piesa intr-un buffer. Apoi cu ajutorul obiectului "info" vom afisa timpul total al piesei in milisecunde. Acesta valoare o vom imparti in cate slice-uri dorim. Eu am folosit 32 de slice-uri, dar valoarea se poate seta arbitrar. Astfel vom avea timpul in milisecunde pe care il va avea fiecare slice. Astfel, pentru primul slice incepem de la 0, pentru al doilea slice incepem de la 0 + duratia slice-ului, pentru al treilea slice incepem de la 0 + durata a doua slice-uri, si asa mai departe. Acest lucru este realizat cu ajutorul obiectului trigger, in care de fiecare data cand incarcam o valoare a slide ului de la 0 la 31, incarca valoarea respectiva si apoi da si un bang, pentru calcularea instanta a noului slice selectat. Calculul intervalului este {(durata unui slice * numarul slice-ului), ((durata unui slice * numarul slice-ului) + durata unui slice)}.
+
+Odata slice-urile pentru cele doua piese fiind selectate, putem astfel reda fiecare segment in loop cu ajutorul obiectului "mc.groove~" si al "mc.sig~", ce controleaza viteza de redare al segmentului respectiv.
+
+Pentru vizualizarea melodiilor in timp, am folosit "waveform~" si "loadmess" pentru a incarca informatia audio in waveform cand o melodie este selectata.
+
+Apoi, pentru controlul nivelului audio si al slice-ului selectat, folosim obiectul "udpreceive", pentru a primi valorile necesare, pe care le vom incarca in obiectele de gain "live.gain" si obiectul de selectare al slice-ului care nu e nimeni altcineva decat obiectul de trigger mentionat mai devreme.
+
+Astfel, rezulta un patch cu care putem sa ne jucam cu redarea in segmente a doua piese si modificarea nivelului acestora in timp real, rezultand un efect similar unui fader.
 
 ## (Istoric)
 
